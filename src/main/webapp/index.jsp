@@ -2,6 +2,6 @@
          pageEncoding="UTF-8"%>
 <html>
 <body>
-    <h1>Hello World</h1>
+    <jsp:forward page="pages/main.jsp"></jsp:forward>
 </body>
 </html>

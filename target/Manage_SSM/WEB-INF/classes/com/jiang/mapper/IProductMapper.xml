@@ -7,5 +7,11 @@
         select * from product;
     </select>
 
+    <insert id="save" parameterType="com.jiang.domain.Product" >
+        insert into product (productNum,productName,cityName,departureTime,productPrice,productDesc,productStatus)
+        values(#{productNum},#{productName},#{cityName},#{departureTime},#{productPrice},#{productDesc},#{productStatus});
+    </insert>
+
+
 
 </mapper>

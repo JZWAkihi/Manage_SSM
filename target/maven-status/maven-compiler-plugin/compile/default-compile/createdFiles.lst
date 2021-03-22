@@ -2,4 +2,5 @@ com\jiang\service\IProductService.class
 com\jiang\controller\IProductController.class
 com\jiang\service\Impl\IProductServiceImpl.class
 com\jiang\dao\IProductDao.class
+com\jiang\utils\DateUtils.class
 com\jiang\domain\Product.class

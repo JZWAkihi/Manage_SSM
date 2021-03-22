@@ -9,4 +9,7 @@ public interface IProductService {
     List<Product> findAll();
 
 
+
+    void save(Product product);
+
 }

@@ -22,4 +22,10 @@ public class IProductServiceImpl implements IProductService {
         System.out.println(iProductDao);
         return iProductDao.findAll();
     }
+
+
+    @Override
+    public void save(Product product) {
+        iProductDao.save(product);
+    }
 }
