@@ -5,10 +5,58 @@
 
 
 
-    <select id="findAll" resultType="com.jiang.domain.Orders">
-        select * from
+    <resultMap id="ordersMap" type="com.jiang.domain.Orders">
+        <id column="id" property="id"/>
+        <result column="orderTime" property="orderTime"/>
+        <result column="orderNum" property="orderNum"/>
+        <result column="orderStatus" property="orderStatus"/>
+        <result column="peopleCount" property="peopleCount"/>
+        <result column="payType" property="payType"/>
+        <result column="orderDesc" property="orderDesc"/>
+        <association property="product" javaType="com.jiang.domain.Product">
+            <id column="id" property="id"/>
+            <result column="productNum" property="productNum"/>
+            <result column="productName" property="productName"/>
+            <result column="cityName" property="cityName"/>
+            <result column="departureTime" property="departureTime"/>
+            <result column="productPrice" property="productPrice"/>
+            <result column="productDesc" property="productDesc"/>
+            <result column="productStatus" property="productStatus"/>
+        </association>
+
+        <association property="member" javaType="com.jiang.domain.Member">
+            <id column="id" property="id"/>
+            <result column="name" property="name"/>
+            <result column="nickName" property="nickname"/>
+            <result column="phone" property="phone"/>
+            <result column="email" property="email"/>
+        </association>
+        <collection column="travellers" property="travellers" ofType="com.jiang.domain.Traveller">
+            <id column="id" property="id"/>
+            <result column="name" property="name"/>
+            <result column="sex" property="sex"/>
+            <result column="phoneNum" property="phoneNum"/>
+            <result column="credentialsType" property="credentialsType"/>
+            <result column="credentialsNum" property="credentialsNum"/>
+            <result column="travellerType" property="travellerType"/>
+        </collection>
+    </resultMap>
+
+    <select id="findAll" resultMap="ordersMap">
+        select o.id,o.id, o.ordernum, o.ordertime, o.peoplecount, o.orderdesc, o.paytype, o.orderstatus, o.productid, o.memberid
+        ,p.id, p.productNum, p.productName, p.cityName, p.DepartureTime, p.productPrice, p.productDesc, p.productStatus,
+        m.id, m.name, m.nickName, m.phoneNum, m.email,t.id, t.name, t.sex, t.phoneNum, t.credentialsType, t.credentialsNum, t.travellerType
+        from orders o
+        left join product p on o.productId = p.id
+        left join member m on o.memberId = m.id
+        left join traveller t on t.id = (select travellerId from order_traveller where orderId = o.id)
     </select>
 
+
+
+    <select id="findById" parameterType="Integer" resultType="com.jiang.domain.Orders">
+        select  * from orders where id = #{id};
+    </select>
 
 
 </mapper>

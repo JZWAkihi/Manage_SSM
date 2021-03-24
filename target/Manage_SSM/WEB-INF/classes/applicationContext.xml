@@ -72,4 +72,9 @@
         <aop:advisor advice-ref="transactionInterceptor" pointcut="execution(* com.jiang.service.*ServiceImpl.*(..))"/>
     </aop:config>
 
+
+
+
+
+
 </beans>

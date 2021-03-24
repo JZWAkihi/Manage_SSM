@@ -1,6 +1,13 @@
+com\jiang\dao\OrdersDao.class
 com\jiang\service\IProductService.class
+com\jiang\controller\OrdersController.class
 com\jiang\controller\IProductController.class
+com\jiang\domain\Member.class
+com\jiang\service\Impl\OrderServiceImpl.class
+com\jiang\domain\Orders.class
 com\jiang\service\Impl\IProductServiceImpl.class
 com\jiang\dao\IProductDao.class
+com\jiang\service\OrdersService.class
 com\jiang\utils\DateUtils.class
+com\jiang\domain\Traveller.class
 com\jiang\domain\Product.class

@@ -4,9 +4,10 @@ import com.jiang.domain.Orders;
 
 import java.util.List;
 
-public interface OrdersService {
+public interface OrdersService  {
 
-    List<Orders> findAll();
+    List<Orders> findAll(Integer page,Integer size);
 
+    Orders findById(Integer id);
 
 }

@@ -4,7 +4,6 @@ import com.jiang.domain.Product;
 import com.jiang.service.Impl.IProductServiceImpl;
 import jdk.nashorn.internal.runtime.logging.Logger;
 import lombok.extern.slf4j.Slf4j;
-import org.intellij.lang.annotations.JdkConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

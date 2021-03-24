@@ -71,6 +71,11 @@ public class Orders implements Serializable {
     }
 
     public String getOrderStatusStr() {
+        if (orderStatus != 0){
+            orderStatusStr = "未支付";
+        }else{
+            orderTimeStr = "已支付";
+        }
         return orderStatusStr;
     }
 
@@ -119,6 +124,13 @@ public class Orders implements Serializable {
     }
 
     public String getPayTypeStr() {
+        if (payType == 0){
+            payTypeStr = "支付宝";
+        }else if(payType == 1){
+            payTypeStr = "微信";
+        }else{
+            payTypeStr = "其他";
+        }
         return payTypeStr;
     }
 
@@ -132,5 +144,24 @@ public class Orders implements Serializable {
 
     public void setOrderDesc(String orderDesc) {
         this.orderDesc = orderDesc;
+    }
+
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "id='" + id + '\'' +
+                ", orderNum='" + orderNum + '\'' +
+                ", orderTime=" + orderTime +
+                ", orderTimeStr='" + orderTimeStr + '\'' +
+                ", orderStatus=" + orderStatus +
+                ", orderStatusStr='" + orderStatusStr + '\'' +
+                ", peopleCount=" + peopleCount +
+                ", product=" + product +
+                ", travellers=" + travellers +
+                ", member=" + member +
+                ", payType=" + payType +
+                ", payTypeStr='" + payTypeStr + '\'' +
+                ", orderDesc='" + orderDesc + '\'' +
+                '}';
     }
 }
