@@ -8,6 +8,6 @@ public interface OrdersService  {
 
     List<Orders> findAll(Integer page,Integer size);
 
-    Orders findById(Integer id);
+    Orders findById(String id);
 
 }

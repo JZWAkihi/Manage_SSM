@@ -21,7 +21,7 @@ public class SrerviceTest {
 
     @Test
     public void test(){
-        Orders byId = ordersService.findById(1);
+        Orders byId = ordersService.findById("1");
         System.out.println(byId);
     }
 

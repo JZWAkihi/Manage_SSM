@@ -2,6 +2,7 @@ package com.jiang.mybatisTest;
 
 import com.jiang.dao.IProductDao;
 import com.jiang.dao.OrdersDao;
+import com.jiang.dao.UserDao;
 import com.jiang.domain.Orders;
 import com.jiang.domain.Product;
 import org.junit.Test;
@@ -33,13 +34,7 @@ public class tset1 {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         OrdersDao bean = context.getBean(OrdersDao.class);
-        System.out.println(bean.findById(1).toString());
-
-        List<Orders> list = bean.findAll();
-
-        for (Orders o : list) {
-            System.out.println(o);
-        }
+        System.out.println(bean.findById("2").toString());
     }
 
 
@@ -49,5 +44,14 @@ public class tset1 {
 
         OrdersDao bean = context.getBean(OrdersDao.class);
         System.out.println(bean.findAllTraveller(1));
+    }
+
+    @Test
+    public void Test3(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        UserDao bean = context.getBean(UserDao.class);
+        System.out.println(bean.findByUsername("admin"));
+
     }
 }

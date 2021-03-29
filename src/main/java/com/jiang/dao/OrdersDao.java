@@ -13,7 +13,7 @@ public interface OrdersDao {
     List<Orders> findAll();
 
 
-    Orders findById(Integer id);
+    Orders findById(String id);
 
     Traveller findAllTraveller(Integer orderId);
 }

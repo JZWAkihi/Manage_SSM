@@ -54,7 +54,8 @@
 
 
 
-    <select id="findById" parameterType="Integer" resultType="com.jiang.domain.Orders">
+
+    <select id="findById" parameterType="String" resultMap="ordersMap">
         select  * from orders where id = #{id};
     </select>
 

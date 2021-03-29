@@ -29,7 +29,7 @@ public class OrderServiceImpl implements OrdersService {
 
 
     @Override
-    public Orders findById(Integer id) {
+    public Orders findById(String id) {
         System.out.println(id);
 
         System.out.println(ordersDao.findById(id));

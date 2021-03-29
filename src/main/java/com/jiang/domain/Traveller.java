@@ -12,10 +12,10 @@ public class Traveller implements Serializable {
     private String name;
     private String sex;
     private String phoneNum;
-    private Integer credentialsType;
+    private Integer credentialsType;  //证件 0身份证  1 护照  2军官证
     private String credentialsTypeStr;
     private String credentialsNum;
-    private Integer travellerType;
+    private Integer travellerType;    //旅客类型(人群) 0 成人  1 儿童
     private String travellerTypeStr;
 
 
@@ -64,6 +64,14 @@ public class Traveller implements Serializable {
     }
 
     public void setCredentialsTypeStr(String credentialsTypeStr) {
+        if(credentialsType == 1){
+            credentialsTypeStr = "身份证";
+        }else if(credentialsType == 2){
+            credentialsTypeStr = "护照";
+        }else{
+            credentialsTypeStr = "军官证";
+        }
+
         this.credentialsTypeStr = credentialsTypeStr;
     }
 
@@ -84,6 +92,11 @@ public class Traveller implements Serializable {
     }
 
     public String getTravellerTypeStr() {
+        if(travellerType == 1){
+            travellerTypeStr = "成人";
+        }else{
+            travellerTypeStr = "儿童";
+        }
         return travellerTypeStr;
     }
 
