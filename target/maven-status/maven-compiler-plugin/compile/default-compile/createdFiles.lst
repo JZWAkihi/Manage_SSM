@@ -2,6 +2,7 @@ com\jiang\domain\UserInfo.class
 com\jiang\service\IProductService.class
 com\jiang\controller\OrdersController.class
 com\jiang\service\UserService.class
+com\jiang\utils\BCryptPasswordEncoderUtils.class
 com\jiang\controller\IProductController.class
 com\jiang\domain\Member.class
 com\jiang\service\Impl\UserServiceImpl.class
@@ -13,8 +14,10 @@ com\jiang\dao\IProductDao.class
 com\jiang\utils\DateUtils.class
 com\jiang\domain\Traveller.class
 com\jiang\domain\Product.class
+com\jiang\controller\UserController.class
 com\jiang\dao\OrdersDao.class
 com\jiang\service\Impl\OrderServiceImpl.class
 com\jiang\domain\Role.class
+com\jiang\dao\IPermissionDao.class
 com\jiang\domain\Permission.class
 com\jiang\service\OrdersService.class

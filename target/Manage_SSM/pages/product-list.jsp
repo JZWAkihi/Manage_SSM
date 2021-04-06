@@ -255,7 +255,6 @@
 											<td class="text-center">
 												<a href="${pageContext.request.contextPath}/product/findById.do?id=${product.id}" class="btn bg-olive btn-xs">编辑</a>
 												<a onclick="delById(${product.id})" class="btn bg-olive btn-xs">删除</a>
-
 											</td>
 										</tr>
 									</c:forEach>

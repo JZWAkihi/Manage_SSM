@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="com.jiang.SpringTest.SrerviceTest" time="0.623" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="com.jiang.SpringTest.SrerviceTest" time="0.679" errors="2" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="D:\Environment\JDK\jre\bin"/>
@@ -65,6 +65,877 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.jiang.SpringTest.SrerviceTest" name="test" time="0.54"/>
-  <testcase classname="com.jiang.SpringTest.SrerviceTest" name="test1" time="0.083"/>
+  <testcase classname="com.jiang.SpringTest.SrerviceTest" name="test" time="0.405">
+    <error message="
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+### The error may exist in file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\mapper\OrdersMapper.xml]
+### The error may involve com.jiang.dao.OrdersDao.findById-Inline
+### The error occurred while setting parameters
+### SQL: select  * from orders where id = ?;
+### Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist" type="org.springframework.jdbc.BadSqlGrammarException">org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+### The error may exist in file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\mapper\OrdersMapper.xml]
+### The error may involve com.jiang.dao.OrdersDao.findById-Inline
+### The error occurred while setting parameters
+### SQL: select  * from orders where id = ?;
+### Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:235)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:75)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:447)
+	at com.sun.proxy.$Proxy26.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:167)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:82)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy29.findById(Unknown Source)
+	at com.jiang.service.Impl.OrderServiceImpl.findById(OrderServiceImpl.java:35)
+	at com.jiang.SpringTest.SrerviceTest.test(SrerviceTest.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.execute(NewProxyPreparedStatement.java:989)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy42.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy40.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
+	... 44 more
+</error>
+    <system-out>2021-04-06 19:31:06,703 0      [           main] DEBUG junit4.SpringJUnit4ClassRunner  - SpringJUnit4ClassRunner constructor called with [class com.jiang.SpringTest.SrerviceTest]
+2021-04-06 19:31:06,711 8      [           main] DEBUG rk.test.context.BootstrapUtils  - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+2021-04-06 19:31:06,720 17     [           main] DEBUG rk.test.context.BootstrapUtils  - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+2021-04-06 19:31:06,753 50     [           main] DEBUG rk.test.context.BootstrapUtils  - Instantiating TestContextBootstrapper for test class [com.jiang.SpringTest.SrerviceTest] from class [org.springframework.test.context.support.DefaultTestContextBootstrapper]
+2021-04-06 19:31:06,773 70     [           main] DEBUG ctDelegatingSmartContextLoader  - Delegating to GenericXmlContextLoader to process context configuration [ContextConfigurationAttributes@63e2203c declaringClass = &apos;com.jiang.SpringTest.SrerviceTest&apos;, classes = &apos;{}&apos;, locations = &apos;{classpath*:applicationContext.xml}&apos;, inheritLocations = true, initializers = &apos;{}&apos;, inheritInitializers = true, name = [null], contextLoaderClass = &apos;org.springframework.test.context.ContextLoader&apos;].
+2021-04-06 19:31:06,788 85     [           main] DEBUG xt.support.ActiveProfilesUtils  - Could not find an &apos;annotation declaring class&apos; for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.jiang.SpringTest.SrerviceTest]
+2021-04-06 19:31:06,788 85     [           main] DEBUG DefaultTestContextBootstrapper  - @TestExecutionListeners is not present for class [com.jiang.SpringTest.SrerviceTest]: using defaults.
+2021-04-06 19:31:06,789 86     [           main] INFO  DefaultTestContextBootstrapper  - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-04-06 19:31:06,800 97     [           main] INFO  DefaultTestContextBootstrapper  - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6043cd28, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@cb51256, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@59906517, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5bfbf16f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@25af5db5, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@12cdcf4, org.springframework.test.context.event.EventPublishingTestExecutionListener@5bcea91b]
+2021-04-06 19:31:06,804 101    [           main] DEBUG t.annotation.ProfileValueUtils  - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.jiang.SpringTest.SrerviceTest]
+2021-04-06 19:31:06,805 102    [           main] DEBUG t.annotation.ProfileValueUtils  - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.jiang.SpringTest.SrerviceTest]
+2021-04-06 19:31:06,806 103    [           main] DEBUG t.annotation.ProfileValueUtils  - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.jiang.SpringTest.SrerviceTest]
+2021-04-06 19:31:06,806 103    [           main] DEBUG t.annotation.ProfileValueUtils  - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.jiang.SpringTest.SrerviceTest]
+2021-04-06 19:31:06,808 105    [           main] DEBUG esContextTestExecutionListener  - Before test class: context [DefaultTestContext@4d3167f4 testClass = SrerviceTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+2021-04-06 19:31:06,810 107    [           main] DEBUG t.annotation.ProfileValueUtils  - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.jiang.SpringTest.SrerviceTest]
+2021-04-06 19:31:06,810 107    [           main] DEBUG t.annotation.ProfileValueUtils  - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.jiang.SpringTest.SrerviceTest]
+2021-04-06 19:31:06,811 108    [           main] DEBUG InjectionTestExecutionListener  - Performing dependency injection for test context [[DefaultTestContext@4d3167f4 testClass = SrerviceTest, testInstance = com.jiang.SpringTest.SrerviceTest@4671e53b, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]], attributes = map[[empty]]]].
+2021-04-06 19:31:06,812 109    [           main] DEBUG ctDelegatingSmartContextLoader  - Delegating to GenericXmlContextLoader to load context from [MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]].
+2021-04-06 19:31:06,812 109    [           main] DEBUG t.AbstractGenericContextLoader  - Loading ApplicationContext for merged context configuration [[MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]].
+2021-04-06 19:31:06,844 141    [           main] DEBUG k.core.env.StandardEnvironment  - Activating profiles []
+2021-04-06 19:31:07,033 330    [           main] DEBUG ClassPathBeanDefinitionScanner  - Ignored because not a concrete top-level class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\dao\IPermissionDao.class]
+2021-04-06 19:31:07,033 330    [           main] DEBUG ClassPathBeanDefinitionScanner  - Ignored because not a concrete top-level class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\dao\IProductDao.class]
+2021-04-06 19:31:07,034 331    [           main] DEBUG ClassPathBeanDefinitionScanner  - Ignored because not a concrete top-level class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\dao\OrdersDao.class]
+2021-04-06 19:31:07,034 331    [           main] DEBUG ClassPathBeanDefinitionScanner  - Ignored because not a concrete top-level class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\dao\RoleDao.class]
+2021-04-06 19:31:07,041 338    [           main] DEBUG ClassPathBeanDefinitionScanner  - Ignored because not a concrete top-level class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\dao\UserDao.class]
+2021-04-06 19:31:07,054 351    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\service\Impl\IProductServiceImpl.class]
+2021-04-06 19:31:07,055 352    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\service\Impl\OrderServiceImpl.class]
+2021-04-06 19:31:07,056 353    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\service\Impl\UserServiceImpl.class]
+2021-04-06 19:31:07,063 360    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\domain\Member.class]
+2021-04-06 19:31:07,064 361    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\domain\Orders.class]
+2021-04-06 19:31:07,064 361    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\domain\Permission.class]
+2021-04-06 19:31:07,065 362    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\domain\Product.class]
+2021-04-06 19:31:07,065 362    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\domain\Traveller.class]
+2021-04-06 19:31:07,066 363    [           main] DEBUG ClassPathBeanDefinitionScanner  - Identified candidate component class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\domain\UserInfo.class]
+2021-04-06 19:31:07,110 407    [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 36 bean definitions from URL [file:/D:/Document/Code/java/coding/Manage_SSM/target/classes/applicationContext.xml]
+2021-04-06 19:31:07,110 407    [           main] DEBUG port.GenericApplicationContext  - Refreshing org.springframework.context.support.GenericApplicationContext@43a0cee9
+2021-04-06 19:31:07,138 435    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.context.annotation.internalConfigurationAnnotationProcessor&apos;
+2021-04-06 19:31:07,227 524    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;mapperScannerConfigurer&apos;
+2021-04-06 19:31:07,249 546    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\dao\IPermissionDao.class]
+2021-04-06 19:31:07,249 546    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\dao\IProductDao.class]
+2021-04-06 19:31:07,249 546    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\dao\OrdersDao.class]
+2021-04-06 19:31:07,250 547    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\dao\RoleDao.class]
+2021-04-06 19:31:07,250 547    [           main] DEBUG .mapper.ClassPathMapperScanner  - Identified candidate component class: file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\dao\UserDao.class]
+2021-04-06 19:31:07,251 548    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name &apos;IPermissionDao&apos; and &apos;com.jiang.dao.IPermissionDao&apos; mapperInterface
+2021-04-06 19:31:07,252 549    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name &apos;IPermissionDao&apos;.
+2021-04-06 19:31:07,252 549    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name &apos;IProductDao&apos; and &apos;com.jiang.dao.IProductDao&apos; mapperInterface
+2021-04-06 19:31:07,252 549    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name &apos;IProductDao&apos;.
+2021-04-06 19:31:07,252 549    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name &apos;ordersDao&apos; and &apos;com.jiang.dao.OrdersDao&apos; mapperInterface
+2021-04-06 19:31:07,252 549    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name &apos;ordersDao&apos;.
+2021-04-06 19:31:07,252 549    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name &apos;roleDao&apos; and &apos;com.jiang.dao.RoleDao&apos; mapperInterface
+2021-04-06 19:31:07,252 549    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name &apos;roleDao&apos;.
+2021-04-06 19:31:07,252 549    [           main] DEBUG .mapper.ClassPathMapperScanner  - Creating MapperFactoryBean with name &apos;userDao&apos; and &apos;com.jiang.dao.UserDao&apos; mapperInterface
+2021-04-06 19:31:07,252 549    [           main] DEBUG .mapper.ClassPathMapperScanner  - Enabling autowire by type for MapperFactoryBean with name &apos;userDao&apos;.
+2021-04-06 19:31:07,254 551    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0&apos;
+2021-04-06 19:31:07,265 562    [           main] DEBUG ropertySourcesPropertyResolver  - Found key &apos;jdbc.driver&apos; in PropertySource &apos;localProperties&apos; with value of type String
+2021-04-06 19:31:07,265 562    [           main] DEBUG ropertySourcesPropertyResolver  - Found key &apos;jdbc.url&apos; in PropertySource &apos;localProperties&apos; with value of type String
+2021-04-06 19:31:07,265 562    [           main] DEBUG ropertySourcesPropertyResolver  - Found key &apos;jdbc.username&apos; in PropertySource &apos;localProperties&apos; with value of type String
+2021-04-06 19:31:07,265 562    [           main] DEBUG ropertySourcesPropertyResolver  - Found key &apos;jdbc.password&apos; in PropertySource &apos;localProperties&apos; with value of type String
+2021-04-06 19:31:07,267 564    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.context.event.internalEventListenerProcessor&apos;
+2021-04-06 19:31:07,268 565    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.context.event.internalEventListenerFactory&apos;
+2021-04-06 19:31:07,270 567    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.context.annotation.internalAutowiredAnnotationProcessor&apos;
+2021-04-06 19:31:07,272 569    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.context.annotation.internalCommonAnnotationProcessor&apos;
+2021-04-06 19:31:07,275 572    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.aop.config.internalAutoProxyCreator&apos;
+2021-04-06 19:31:07,295 592    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;IProductServiceImpl&apos;
+2021-04-06 19:31:07,296 593    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0&apos;
+2021-04-06 19:31:07,327 624    [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using &apos;class org.apache.ibatis.logging.slf4j.Slf4jImpl&apos; adapter.
+2021-04-06 19:31:07,336 633    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;IProductDao&apos;
+2021-04-06 19:31:07,344 641    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;sqlSessionFactory&apos;
+2021-04-06 19:31:07,345 642    [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;dataSource&apos;
+2021-04-06 19:31:07,356 653    [           main] INFO         com.mchange.v2.log.MLog  - MLog clients using log4j logging.
+2021-04-06 19:31:07,751 1048   [           main] INFO  m.mchange.v2.c3p0.C3P0Registry  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2021-04-06 19:31:07,763 1060   [           main] DEBUG icPooledDataSourceManagerMBean  - MBean: com.mchange.v2.c3p0:type=PooledDataSource[1hgemtdag1abmdpxga1lb1|4d1bf319] registered.
+2021-04-06 19:31:07,958 1255   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Property `configuration` or &apos;configLocation&apos; not specified, using default MyBatis Configuration
+2021-04-06 19:31:07,986 1283   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Registered plugin: &apos;com.github.pagehelper.PageInterceptor@176b3f44&apos;
+2021-04-06 19:31:08,040 1337   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Parsed mapper file: &apos;file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\mapper\IProductMapper.xml]&apos;
+2021-04-06 19:31:08,053 1350   [           main] DEBUG s.spring.SqlSessionFactoryBean  - Parsed mapper file: &apos;file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\mapper\OrdersMapper.xml]&apos;
+2021-04-06 19:31:08,066 1363   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;orderServiceImpl&apos;
+2021-04-06 19:31:08,067 1364   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;ordersDao&apos;
+2021-04-06 19:31:08,069 1366   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;userServiceImpl&apos;
+2021-04-06 19:31:08,070 1367   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;userDao&apos;
+2021-04-06 19:31:08,082 1379   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;member&apos;
+2021-04-06 19:31:08,082 1379   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;orders&apos;
+2021-04-06 19:31:08,085 1382   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;permission&apos;
+2021-04-06 19:31:08,086 1383   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;product&apos;
+2021-04-06 19:31:08,087 1384   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;traveller&apos;
+2021-04-06 19:31:08,088 1385   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;userInfo&apos;
+2021-04-06 19:31:08,088 1385   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;mvcContentNegotiationManager&apos;
+2021-04-06 19:31:08,099 1396   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping&apos;
+2021-04-06 19:31:08,122 1419   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;mvcCorsConfigurations&apos;
+2021-04-06 19:31:08,153 1450   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.handler.MappedInterceptor#0&apos;
+2021-04-06 19:31:08,154 1451   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.format.support.FormattingConversionServiceFactoryBean#0&apos;
+2021-04-06 19:31:08,228 1525   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter&apos;
+2021-04-06 19:31:08,285 1582   [           main] DEBUG n.RequestMappingHandlerAdapter  - ControllerAdvice beans: none
+2021-04-06 19:31:08,321 1618   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;mvcUriComponentsContributor&apos;
+2021-04-06 19:31:08,331 1628   [           main] DEBUG n.RequestMappingHandlerAdapter  - ControllerAdvice beans: none
+2021-04-06 19:31:08,334 1631   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0&apos;
+2021-04-06 19:31:08,344 1641   [           main] DEBUG eptionHandlerExceptionResolver  - ControllerAdvice beans: none
+2021-04-06 19:31:08,346 1643   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0&apos;
+2021-04-06 19:31:08,349 1646   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0&apos;
+2021-04-06 19:31:08,352 1649   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping&apos;
+2021-04-06 19:31:08,358 1655   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter&apos;
+2021-04-06 19:31:08,359 1656   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter&apos;
+2021-04-06 19:31:08,359 1656   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;manager&apos;
+2021-04-06 19:31:08,367 1664   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;transactionInterceptor&apos;
+2021-04-06 19:31:08,377 1674   [           main] DEBUG atchTransactionAttributeSource  - Adding transactional method [find**] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly]
+2021-04-06 19:31:08,377 1674   [           main] DEBUG atchTransactionAttributeSource  - Adding transactional method [**] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT]
+2021-04-06 19:31:08,380 1677   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;IPermissionDao&apos;
+2021-04-06 19:31:08,382 1679   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;roleDao&apos;
+2021-04-06 19:31:08,403 1700   [           main] DEBUG acheAwareContextLoaderDelegate  - Storing ApplicationContext [1134612201] in cache under key [[MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+2021-04-06 19:31:08,403 1700   [           main] DEBUG ngframework.test.context.cache  - Spring test ApplicationContext cache statistics: [DefaultContextCache@bcec031 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1]
+2021-04-06 19:31:08,406 1703   [           main] DEBUG acheAwareContextLoaderDelegate  - Retrieved ApplicationContext [1134612201] from cache with key [[MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+2021-04-06 19:31:08,406 1703   [           main] DEBUG ngframework.test.context.cache  - Spring test ApplicationContext cache statistics: [DefaultContextCache@bcec031 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1]
+2021-04-06 19:31:08,410 1707   [           main] DEBUG esContextTestExecutionListener  - Before test method: context [DefaultTestContext@4d3167f4 testClass = SrerviceTest, testInstance = com.jiang.SpringTest.SrerviceTest@4671e53b, testMethod = test@SrerviceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+2021-04-06 19:31:08,414 1711   [           main] DEBUG acheAwareContextLoaderDelegate  - Retrieved ApplicationContext [1134612201] from cache with key [[MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+2021-04-06 19:31:08,414 1711   [           main] DEBUG ngframework.test.context.cache  - Spring test ApplicationContext cache statistics: [DefaultContextCache@bcec031 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1]
+2021-04-06 19:31:08,415 1712   [           main] DEBUG acheAwareContextLoaderDelegate  - Retrieved ApplicationContext [1134612201] from cache with key [[MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+2021-04-06 19:31:08,415 1712   [           main] DEBUG ngframework.test.context.cache  - Spring test ApplicationContext cache statistics: [DefaultContextCache@bcec031 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1]
+1
+2021-04-06 19:31:08,423 1720   [           main] DEBUG mybatis.spring.SqlSessionUtils  - Creating a new SqlSession
+2021-04-06 19:31:08,431 1728   [           main] DEBUG mybatis.spring.SqlSessionUtils  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c9399a4] was not registered for synchronization because synchronization is not active
+2021-04-06 19:31:08,437 1734   [           main] DEBUG dbc.datasource.DataSourceUtils  - Fetching JDBC Connection from DataSource
+2021-04-06 19:31:08,467 1764   [           main] DEBUG resourcepool.BasicResourcePool  - incremented pending_acquires: 1
+2021-04-06 19:31:08,467 1764   [           main] DEBUG resourcepool.BasicResourcePool  - incremented pending_acquires: 2
+2021-04-06 19:31:08,467 1764   [           main] DEBUG resourcepool.BasicResourcePool  - incremented pending_acquires: 3
+2021-04-06 19:31:08,467 1764   [           main] DEBUG resourcepool.BasicResourcePool  - com.mchange.v2.resourcepool.BasicResourcePool@64bc21ac config: [start -&gt; 3; min -&gt; 3; max -&gt; 15; inc -&gt; 3; num_acq_attempts -&gt; 30; acq_attempt_delay -&gt; 1000; check_idle_resources_delay -&gt; 0; mox_resource_age -&gt; 0; max_idle_time -&gt; 0; excess_max_idle_time -&gt; 0; destroy_unreturned_resc_time -&gt; 0; expiration_enforcement_delay -&gt; 0; break_on_acquisition_failure -&gt; false; debug_store_checkout_exceptions -&gt; false]
+2021-04-06 19:31:08,468 1765   [           main] INFO  l.AbstractPoolBackedDataSource  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -&gt; 3, acquireRetryAttempts -&gt; 30, acquireRetryDelay -&gt; 1000, autoCommitOnClose -&gt; false, automaticTestTable -&gt; null, breakAfterAcquireFailure -&gt; false, checkoutTimeout -&gt; 0, connectionCustomizerClassName -&gt; null, connectionTesterClassName -&gt; com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -&gt; 1hgemtdag1abmdpxga1lb1|4d1bf319, debugUnreturnedConnectionStackTraces -&gt; false, description -&gt; null, driverClass -&gt; com.mysql.cj.jdbc.Driver, factoryClassLocation -&gt; null, forceIgnoreUnresolvedTransactions -&gt; false, identityToken -&gt; 1hgemtdag1abmdpxga1lb1|4d1bf319, idleConnectionTestPeriod -&gt; 0, initialPoolSize -&gt; 3, jdbcUrl -&gt; jdbc:mysql://localhost:3306/ssm?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=Asia/Shanghai, maxAdministrativeTaskTime -&gt; 0, maxConnectionAge -&gt; 0, maxIdleTime -&gt; 0, maxIdleTimeExcessConnections -&gt; 0, maxPoolSize -&gt; 15, maxStatements -&gt; 0, maxStatementsPerConnection -&gt; 0, minPoolSize -&gt; 3, numHelperThreads -&gt; 3, numThreadsAwaitingCheckoutDefaultUser -&gt; 0, preferredTestQuery -&gt; null, properties -&gt; {user=******, password=******}, propertyCycle -&gt; 0, testConnectionOnCheckin -&gt; false, testConnectionOnCheckout -&gt; false, unreturnedConnectionTimeout -&gt; 0, usesTraditionalReflectiveProxies -&gt; false ]
+2021-04-06 19:31:08,468 1765   [           main] DEBUG resourcepool.BasicResourcePool  - acquire test -- pool size: 0; target_pool_size: 3; desired target? 1
+2021-04-06 19:31:08,468 1765   [           main] DEBUG resourcepool.BasicResourcePool  - awaitAvailable(): [unknown]
+2021-04-06 19:31:08,468 1765   [           main] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@64bc21ac [managed: 0, unused: 0, excluded: 0]
+2021-04-06 19:31:08,692 1989   [r$PoolThread-#2] DEBUG .impl.C3P0PooledConnectionPool  - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@6067d87f.acquireResource() returning. 
+2021-04-06 19:31:08,692 1989   [r$PoolThread-#1] DEBUG .impl.C3P0PooledConnectionPool  - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@6067d87f.acquireResource() returning. 
+2021-04-06 19:31:08,692 1989   [r$PoolThread-#0] DEBUG .impl.C3P0PooledConnectionPool  - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@6067d87f.acquireResource() returning. 
+2021-04-06 19:31:08,692 1989   [r$PoolThread-#2] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@64bc21ac [managed: 1, unused: 1, excluded: 0]
+2021-04-06 19:31:08,692 1989   [r$PoolThread-#0] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@64bc21ac [managed: 2, unused: 1, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@3e10604a)
+2021-04-06 19:31:08,692 1989   [r$PoolThread-#0] DEBUG resourcepool.BasicResourcePool  - decremented pending_acquires: 2
+2021-04-06 19:31:08,692 1989   [r$PoolThread-#1] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@64bc21ac [managed: 3, unused: 2, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@3e10604a)
+2021-04-06 19:31:08,692 1989   [r$PoolThread-#1] DEBUG resourcepool.BasicResourcePool  - decremented pending_acquires: 1
+2021-04-06 19:31:08,693 1990   [           main] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@64bc21ac [managed: 3, unused: 2, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@3e10604a)
+2021-04-06 19:31:08,693 1990   [r$PoolThread-#2] DEBUG resourcepool.BasicResourcePool  - decremented pending_acquires: 0
+2021-04-06 19:31:08,693 1990   [           main] DEBUG ction.SpringManagedTransaction  - JDBC Connection [com.mchange.v2.c3p0.impl.NewProxyConnection@5d25e6bb] will not be managed by Spring
+2021-04-06 19:31:08,696 1993   [           main] DEBUG m.jiang.dao.OrdersDao.findById  - ==&gt;  Preparing: select * from orders where id = ?; 
+2021-04-06 19:31:08,725 2022   [           main] DEBUG m.jiang.dao.OrdersDao.findById  - ==&gt; Parameters: 1(String)
+2021-04-06 19:31:08,741 2038   [           main] DEBUG .c3p0.impl.NewPooledConnection  - com.mchange.v2.c3p0.impl.NewPooledConnection@3e10604a handling a throwable.
+java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.execute(NewProxyPreparedStatement.java:989)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy42.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy40.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
+	at com.sun.proxy.$Proxy26.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:167)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:82)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy29.findById(Unknown Source)
+	at com.jiang.service.Impl.OrderServiceImpl.findById(OrderServiceImpl.java:35)
+	at com.jiang.SpringTest.SrerviceTest.test(SrerviceTest.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+2021-04-06 19:31:08,745 2042   [           main] DEBUG    com.mchange.v2.sql.SqlUtils  - Attempted to convert SQLException to SQLException. Leaving it alone. [SQLState: 42S02; errorCode: 1146]
+java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.execute(NewProxyPreparedStatement.java:989)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy42.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy40.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
+	at com.sun.proxy.$Proxy26.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:167)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:82)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy29.findById(Unknown Source)
+	at com.jiang.service.Impl.OrderServiceImpl.findById(OrderServiceImpl.java:35)
+	at com.jiang.SpringTest.SrerviceTest.test(SrerviceTest.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+2021-04-06 19:31:08,746 2043   [           main] DEBUG 0.impl.DefaultConnectionTester  - Testing a Connection in response to an Exception:
+java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.execute(NewProxyPreparedStatement.java:989)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy42.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy40.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
+	at com.sun.proxy.$Proxy26.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:167)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:82)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy29.findById(Unknown Source)
+	at com.jiang.service.Impl.OrderServiceImpl.findById(OrderServiceImpl.java:35)
+	at com.jiang.SpringTest.SrerviceTest.test(SrerviceTest.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+2021-04-06 19:31:08,767 2064   [           main] DEBUG mybatis.spring.SqlSessionUtils  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c9399a4]
+2021-04-06 19:31:08,768 2065   [           main] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@64bc21ac [managed: 3, unused: 2, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@3e10604a)
+2021-04-06 19:31:08,784 2081   [           main] DEBUG ry.xml.XmlBeanDefinitionReader  - Loaded 11 bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2021-04-06 19:31:08,785 2082   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;DB2&apos;
+2021-04-06 19:31:08,788 2085   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;Derby&apos;
+2021-04-06 19:31:08,789 2086   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;H2&apos;
+2021-04-06 19:31:08,789 2086   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;HDB&apos;
+2021-04-06 19:31:08,790 2087   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;HSQL&apos;
+2021-04-06 19:31:08,790 2087   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;Informix&apos;
+2021-04-06 19:31:08,790 2087   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;MS-SQL&apos;
+2021-04-06 19:31:08,791 2088   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;MySQL&apos;
+2021-04-06 19:31:08,791 2088   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;Oracle&apos;
+2021-04-06 19:31:08,792 2089   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;PostgreSQL&apos;
+2021-04-06 19:31:08,792 2089   [           main] DEBUG ort.DefaultListableBeanFactory  - Creating shared instance of singleton bean &apos;Sybase&apos;
+2021-04-06 19:31:08,793 2090   [           main] DEBUG c.support.SQLErrorCodesFactory  - Looking up default SQLErrorCodes for DataSource [com.mchange.v2.c3p0.ComboPooledDataSource@fb96adf4]
+2021-04-06 19:31:08,796 2093   [           main] DEBUG dbc.datasource.DataSourceUtils  - Fetching JDBC Connection from DataSource
+2021-04-06 19:31:08,797 2094   [           main] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@64bc21ac [managed: 3, unused: 2, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@3e10604a)
+2021-04-06 19:31:08,803 2100   [           main] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@64bc21ac [managed: 3, unused: 2, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@3e10604a)
+2021-04-06 19:31:08,804 2101   [           main] DEBUG c.support.SQLErrorCodesFactory  - SQL error codes for &apos;MySQL&apos; found
+2021-04-06 19:31:08,804 2101   [           main] DEBUG c.support.SQLErrorCodesFactory  - Caching SQL error codes for DataSource [com.mchange.v2.c3p0.ComboPooledDataSource@fb96adf4]: database product name is &apos;MySQL&apos;
+2021-04-06 19:31:08,804 2101   [           main] DEBUG rrorCodeSQLExceptionTranslator  - Translating SQLException with SQL state &apos;42S02&apos;, error code &apos;1146&apos;, message [Table &apos;ssm.orders&apos; doesn&apos;t exist] for task [
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+### The error may exist in file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\mapper\OrdersMapper.xml]
+### The error may involve com.jiang.dao.OrdersDao.findById-Inline
+### The error occurred while setting parameters
+### SQL: select  * from orders where id = ?;
+### Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+]
+2021-04-06 19:31:08,805 2102   [           main] DEBUG acheAwareContextLoaderDelegate  - Retrieved ApplicationContext [1134612201] from cache with key [[MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+2021-04-06 19:31:08,805 2102   [           main] DEBUG ngframework.test.context.cache  - Spring test ApplicationContext cache statistics: [DefaultContextCache@bcec031 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1]
+2021-04-06 19:31:08,807 2104   [           main] DEBUG acheAwareContextLoaderDelegate  - Retrieved ApplicationContext [1134612201] from cache with key [[MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+2021-04-06 19:31:08,807 2104   [           main] DEBUG ngframework.test.context.cache  - Spring test ApplicationContext cache statistics: [DefaultContextCache@bcec031 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1]
+2021-04-06 19:31:08,808 2105   [           main] DEBUG esContextTestExecutionListener  - After test method: context [DefaultTestContext@4d3167f4 testClass = SrerviceTest, testInstance = com.jiang.SpringTest.SrerviceTest@4671e53b, testMethod = test@SrerviceTest, testException = org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+### The error may exist in file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\mapper\OrdersMapper.xml]
+### The error may involve com.jiang.dao.OrdersDao.findById-Inline
+### The error occurred while setting parameters
+### SQL: select  * from orders where id = ?;
+### Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist, mergedContextConfiguration = [MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+</system-out>
+    <system-err>log4j:ERROR Could not find value for key log4j.appender.LOGFILE
+log4j:ERROR Could not instantiate appender named &quot;LOGFILE&quot;.
+</system-err>
+  </testcase>
+  <testcase classname="com.jiang.SpringTest.SrerviceTest" name="Test3" time="0.043"/>
+  <testcase classname="com.jiang.SpringTest.SrerviceTest" name="test1" time="0.061">
+    <error message="
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+### The error may exist in file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\mapper\OrdersMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT count(0) FROM orders o LEFT JOIN product p ON o.productId = p.id LEFT JOIN member m ON o.memberId = m.id LEFT JOIN traveller t ON t.id = (SELECT travellerId FROM order_traveller WHERE orderId = o.id)
+### Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist" type="org.springframework.jdbc.BadSqlGrammarException">org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+### The error may exist in file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\mapper\OrdersMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT count(0) FROM orders o LEFT JOIN product p ON o.productId = p.id LEFT JOIN member m ON o.memberId = m.id LEFT JOIN traveller t ON t.id = (SELECT travellerId FROM order_traveller WHERE orderId = o.id)
+### Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:235)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:75)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:447)
+	at com.sun.proxy.$Proxy26.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:231)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy29.findAll(Unknown Source)
+	at com.jiang.service.Impl.OrderServiceImpl.findAll(OrderServiceImpl.java:27)
+	at com.jiang.SpringTest.SrerviceTest.test1(SrerviceTest.java:39)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.execute(NewProxyPreparedStatement.java:989)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy42.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.executeAutoCount(PageInterceptor.java:201)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:113)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy40.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
+	... 45 more
+</error>
+    <system-out>2021-04-06 19:31:08,858 2155   [           main] DEBUG t.annotation.ProfileValueUtils  - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.jiang.SpringTest.SrerviceTest]
+2021-04-06 19:31:08,858 2155   [           main] DEBUG t.annotation.ProfileValueUtils  - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.jiang.SpringTest.SrerviceTest]
+2021-04-06 19:31:08,860 2157   [           main] DEBUG InjectionTestExecutionListener  - Performing dependency injection for test context [[DefaultTestContext@4d3167f4 testClass = SrerviceTest, testInstance = com.jiang.SpringTest.SrerviceTest@1cf2fed4, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]], attributes = map[[empty]]]].
+2021-04-06 19:31:08,860 2157   [           main] DEBUG acheAwareContextLoaderDelegate  - Retrieved ApplicationContext [1134612201] from cache with key [[MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+2021-04-06 19:31:08,860 2157   [           main] DEBUG ngframework.test.context.cache  - Spring test ApplicationContext cache statistics: [DefaultContextCache@bcec031 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1]
+2021-04-06 19:31:08,861 2158   [           main] DEBUG acheAwareContextLoaderDelegate  - Retrieved ApplicationContext [1134612201] from cache with key [[MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+2021-04-06 19:31:08,861 2158   [           main] DEBUG ngframework.test.context.cache  - Spring test ApplicationContext cache statistics: [DefaultContextCache@bcec031 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 13, missCount = 1]
+2021-04-06 19:31:08,862 2159   [           main] DEBUG esContextTestExecutionListener  - Before test method: context [DefaultTestContext@4d3167f4 testClass = SrerviceTest, testInstance = com.jiang.SpringTest.SrerviceTest@1cf2fed4, testMethod = test1@SrerviceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+2021-04-06 19:31:08,863 2160   [           main] DEBUG acheAwareContextLoaderDelegate  - Retrieved ApplicationContext [1134612201] from cache with key [[MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+2021-04-06 19:31:08,863 2160   [           main] DEBUG ngframework.test.context.cache  - Spring test ApplicationContext cache statistics: [DefaultContextCache@bcec031 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 14, missCount = 1]
+2021-04-06 19:31:08,863 2160   [           main] DEBUG acheAwareContextLoaderDelegate  - Retrieved ApplicationContext [1134612201] from cache with key [[MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+2021-04-06 19:31:08,863 2160   [           main] DEBUG ngframework.test.context.cache  - Spring test ApplicationContext cache statistics: [DefaultContextCache@bcec031 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 15, missCount = 1]
+2021-04-06 19:31:08,864 2161   [           main] DEBUG mybatis.spring.SqlSessionUtils  - Creating a new SqlSession
+2021-04-06 19:31:08,865 2162   [           main] DEBUG mybatis.spring.SqlSessionUtils  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d63b624] was not registered for synchronization because synchronization is not active
+2021-04-06 19:31:08,865 2162   [           main] DEBUG                      SQL_CACHE  - Cache Hit Ratio [SQL_CACHE]: 0.0
+2021-04-06 19:31:08,906 2203   [           main] DEBUG dbc.datasource.DataSourceUtils  - Fetching JDBC Connection from DataSource
+2021-04-06 19:31:08,907 2204   [           main] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@64bc21ac [managed: 3, unused: 2, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@3e10604a)
+2021-04-06 19:31:08,907 2204   [           main] DEBUG ction.SpringManagedTransaction  - JDBC Connection [com.mchange.v2.c3p0.impl.NewProxyConnection@1051817b] will not be managed by Spring
+2021-04-06 19:31:08,907 2204   [           main] DEBUG ng.dao.OrdersDao.findAll_COUNT  - ==&gt;  Preparing: SELECT count(0) FROM orders o LEFT JOIN product p ON o.productId = p.id LEFT JOIN member m ON o.memberId = m.id LEFT JOIN traveller t ON t.id = (SELECT travellerId FROM order_traveller WHERE orderId = o.id) 
+2021-04-06 19:31:08,907 2204   [           main] DEBUG ng.dao.OrdersDao.findAll_COUNT  - ==&gt; Parameters: 
+2021-04-06 19:31:08,908 2205   [           main] DEBUG .c3p0.impl.NewPooledConnection  - com.mchange.v2.c3p0.impl.NewPooledConnection@3e10604a handling a throwable.
+java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.execute(NewProxyPreparedStatement.java:989)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy42.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.executeAutoCount(PageInterceptor.java:201)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:113)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy40.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
+	at com.sun.proxy.$Proxy26.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:231)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy29.findAll(Unknown Source)
+	at com.jiang.service.Impl.OrderServiceImpl.findAll(OrderServiceImpl.java:27)
+	at com.jiang.SpringTest.SrerviceTest.test1(SrerviceTest.java:39)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+2021-04-06 19:31:08,908 2205   [           main] DEBUG    com.mchange.v2.sql.SqlUtils  - Attempted to convert SQLException to SQLException. Leaving it alone. [SQLState: 42S02; errorCode: 1146]
+java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.execute(NewProxyPreparedStatement.java:989)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy42.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.executeAutoCount(PageInterceptor.java:201)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:113)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy40.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
+	at com.sun.proxy.$Proxy26.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:231)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy29.findAll(Unknown Source)
+	at com.jiang.service.Impl.OrderServiceImpl.findAll(OrderServiceImpl.java:27)
+	at com.jiang.SpringTest.SrerviceTest.test1(SrerviceTest.java:39)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+2021-04-06 19:31:08,909 2206   [           main] DEBUG 0.impl.DefaultConnectionTester  - Testing a Connection in response to an Exception:
+java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.execute(NewProxyPreparedStatement.java:989)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy42.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.executeAutoCount(PageInterceptor.java:201)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:113)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy40.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
+	at com.sun.proxy.$Proxy26.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:231)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy29.findAll(Unknown Source)
+	at com.jiang.service.Impl.OrderServiceImpl.findAll(OrderServiceImpl.java:27)
+	at com.jiang.SpringTest.SrerviceTest.test1(SrerviceTest.java:39)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+2021-04-06 19:31:08,920 2217   [           main] DEBUG mybatis.spring.SqlSessionUtils  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d63b624]
+2021-04-06 19:31:08,920 2217   [           main] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@64bc21ac [managed: 3, unused: 2, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@3e10604a)
+2021-04-06 19:31:08,921 2218   [           main] DEBUG rrorCodeSQLExceptionTranslator  - Translating SQLException with SQL state &apos;42S02&apos;, error code &apos;1146&apos;, message [Table &apos;ssm.orders&apos; doesn&apos;t exist] for task [
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+### The error may exist in file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\mapper\OrdersMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT count(0) FROM orders o LEFT JOIN product p ON o.productId = p.id LEFT JOIN member m ON o.memberId = m.id LEFT JOIN traveller t ON t.id = (SELECT travellerId FROM order_traveller WHERE orderId = o.id)
+### Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+]
+2021-04-06 19:31:08,921 2218   [           main] DEBUG acheAwareContextLoaderDelegate  - Retrieved ApplicationContext [1134612201] from cache with key [[MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+2021-04-06 19:31:08,921 2218   [           main] DEBUG ngframework.test.context.cache  - Spring test ApplicationContext cache statistics: [DefaultContextCache@bcec031 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 16, missCount = 1]
+2021-04-06 19:31:08,921 2218   [           main] DEBUG acheAwareContextLoaderDelegate  - Retrieved ApplicationContext [1134612201] from cache with key [[MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]]]
+2021-04-06 19:31:08,921 2218   [           main] DEBUG ngframework.test.context.cache  - Spring test ApplicationContext cache statistics: [DefaultContextCache@bcec031 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 17, missCount = 1]
+2021-04-06 19:31:08,922 2219   [           main] DEBUG esContextTestExecutionListener  - After test method: context [DefaultTestContext@4d3167f4 testClass = SrerviceTest, testInstance = com.jiang.SpringTest.SrerviceTest@1cf2fed4, testMethod = test1@SrerviceTest, testException = org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+### The error may exist in file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\mapper\OrdersMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT count(0) FROM orders o LEFT JOIN product p ON o.productId = p.id LEFT JOIN member m ON o.memberId = m.id LEFT JOIN traveller t ON t.id = (SELECT travellerId FROM order_traveller WHERE orderId = o.id)
+### Cause: java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table &apos;ssm.orders&apos; doesn&apos;t exist, mergedContextConfiguration = [MergedContextConfiguration@ed9d034 testClass = SrerviceTest, locations = &apos;{classpath*:applicationContext.xml}&apos;, classes = &apos;{}&apos;, contextInitializerClasses = &apos;[]&apos;, activeProfiles = &apos;{}&apos;, propertySourceLocations = &apos;{}&apos;, propertySourceProperties = &apos;{}&apos;, contextCustomizers = set[[empty]], contextLoader = &apos;org.springframework.test.context.support.DelegatingSmartContextLoader&apos;, parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+</system-out>
+  </testcase>
+  <testcase classname="com.jiang.SpringTest.SrerviceTest" name="test2" time="0.089"/>
+  <testcase classname="com.jiang.SpringTest.SrerviceTest" name="test4" time="0.068"/>
+  <testcase classname="com.jiang.SpringTest.SrerviceTest" name="test5" time="0.013"/>
 </testsuite>
