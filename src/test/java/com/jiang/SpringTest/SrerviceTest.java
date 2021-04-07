@@ -76,7 +76,7 @@ public class SrerviceTest {
 
     @Test
     public void test4(){
-        System.out.println(BCryptPasswordEncoderUtils.encodePassword("admin"));
+        System.out.println(BCryptPasswordEncoderUtils.encodePassword("123123"));
     }
 
 

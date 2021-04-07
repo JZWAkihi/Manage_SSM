@@ -34,9 +34,6 @@ public class UserServiceImpl implements UserService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(userInfo.getRoles());
-        List<SimpleGrantedAuthority> list = new ArrayList<>();
-        list.add(new SimpleGrantedAuthority("ROLE_USER"));
         //User user = new User(userInfo.getUsername(), "{noop}" + userInfo.getPassword(), getAuthority(userInfo.getRoles()));
         User user = new User(userInfo.getUsername(), userInfo.getPassword(), userInfo.getStatus() != 0, true, true, true,getAuthority(userInfo.getId()));
         return user;

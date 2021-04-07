@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.security.RolesAllowed;
 import javax.sound.sampled.Line;
 import java.util.List;
 
@@ -37,6 +38,7 @@ public class IProductController {
 
 
 
+    @RolesAllowed("ADMIN")
     //查询全部产品
     @RequestMapping("/findAll.do")
     public ModelAndView findAll(){

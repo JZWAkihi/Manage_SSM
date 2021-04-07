@@ -34,7 +34,4 @@ public class DateUtils {
 
         return parseDate;
     }
-
-
-
 }

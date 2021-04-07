@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.jiang.SpringTest.SrerviceTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 2.405 sec <<< FAILURE!
-test(com.jiang.SpringTest.SrerviceTest)  Time elapsed: 0.358 sec  <<< ERROR!
+Tests run: 7, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 2.366 sec <<< FAILURE!
+test(com.jiang.SpringTest.SrerviceTest)  Time elapsed: 0.357 sec  <<< ERROR!
 org.springframework.jdbc.BadSqlGrammarException: 
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'ssm.orders' doesn't exist
 ### The error may exist in file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\mapper\OrdersMapper.xml]
@@ -90,7 +90,7 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'ssm.orders' doesn't exist
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
 	... 44 more
 
-test1(com.jiang.SpringTest.SrerviceTest)  Time elapsed: 0.046 sec  <<< ERROR!
+test1(com.jiang.SpringTest.SrerviceTest)  Time elapsed: 0.047 sec  <<< ERROR!
 org.springframework.jdbc.BadSqlGrammarException: 
 ### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'ssm.orders' doesn't exist
 ### The error may exist in file [D:\Document\Code\java\coding\Manage_SSM\target\classes\com\jiang\mapper\OrdersMapper.xml]
