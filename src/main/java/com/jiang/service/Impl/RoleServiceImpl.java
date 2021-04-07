@@ -1,6 +1,7 @@
 package com.jiang.service.Impl;
 
 import com.jiang.dao.RoleDao;
+import com.jiang.domain.Permission;
 import com.jiang.domain.Role;
 import com.jiang.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,15 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public Role findById(String id) {
         return roleDao.findById(id);
+    }
+
+    @Override
+    public List<Permission> findOtherPermissions(String roleId) {
+        return roleDao.findOtherPermissions(roleId);
+    }
+
+    @Override
+    public void addPermissionToRole(String roleId, String permissionId) {
+        roleDao.addPermissionToRole(roleId,permissionId);
     }
 }

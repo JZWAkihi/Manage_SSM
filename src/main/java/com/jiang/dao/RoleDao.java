@@ -1,5 +1,6 @@
 package com.jiang.dao;
 
+import com.jiang.domain.Permission;
 import com.jiang.domain.Role;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
@@ -34,5 +35,12 @@ public interface RoleDao {
     void delete(String roleId);
 
 
+    //查询所有的Permission
+    @Select("select * from permission where id not in(select permissionId from role_permission where roleId=#{roleId})")
+    List<Permission> findOtherPermissions(String roleId);
 
+
+    //添加权限
+    @Insert("insert into role_permission(roleId,permissionId) values(#{roleId},#{permissionId})")
+    void addPermissionToRole(@Param("roleId") String roleId,@Param("permissionId") String permissionId);
 }

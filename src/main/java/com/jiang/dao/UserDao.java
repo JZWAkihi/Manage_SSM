@@ -54,11 +54,11 @@ public interface UserDao {
     public UserInfo findById(String id);
 
 
-    @Select("select * from role where id not in(select roleId from user_role where userId=#{userId})")
+    @Select("select * from role where id not in(select roleId from users_role where userId=#{userId})")
     List<Role> findOtherRole(String userId);
 
     //插入用户角色到中间表
-    @Insert("insert into user_role(userId,roleId) values (#{userId},#{roleId})")
+    @Insert("insert into users_role(userId,roleId) values (#{userId},#{roleId})")
     void addRoleToUser(@Param("userId")String userId,@Param("roleId") String roleId);
 
     //根据ID来查询角色

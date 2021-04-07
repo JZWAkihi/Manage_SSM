@@ -20,4 +20,6 @@ public interface UserService extends UserDetailsService {
 
     List<Role> findRoles(String id);
 
+    List<Role> findOtherRoles(String userId);
+
 }

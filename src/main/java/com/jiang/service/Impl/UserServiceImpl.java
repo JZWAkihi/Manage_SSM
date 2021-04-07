@@ -86,4 +86,12 @@ public class UserServiceImpl implements UserService {
     public List<Role> findRoles(String id) {
         return userDao.findRoles(id);
     }
+
+
+    @Override
+    public List<Role> findOtherRoles(String userId){
+        return userDao.findOtherRole(userId);
+    }
+
+
 }

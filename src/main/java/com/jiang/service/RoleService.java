@@ -1,6 +1,8 @@
 package com.jiang.service;
 
+import com.jiang.domain.Permission;
 import com.jiang.domain.Role;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -15,4 +17,7 @@ public interface RoleService {
 
     void delete(String roleId);
 
+    List<Permission> findOtherPermissions(String roleId);
+
+    void addPermissionToRole(String roleId,String permissionId);
 }
