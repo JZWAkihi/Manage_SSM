@@ -5,6 +5,7 @@ import com.jiang.domain.Orders;
 import com.jiang.domain.UserInfo;
 import com.jiang.service.IProductService;
 import com.jiang.service.OrdersService;
+import com.jiang.service.RoleService;
 import com.jiang.service.UserService;
 import com.jiang.utils.BCryptPasswordEncoderUtils;
 import org.junit.Test;
@@ -25,6 +26,8 @@ public class SrerviceTest {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private RoleService roleService;
 
     @Test
     public void test(){
@@ -80,6 +83,11 @@ public class SrerviceTest {
     @Test
     public void test5(){
         System.out.println(userService.loadUserByUsername("admin"));
+    }
+
+    @Test
+    public void test6(){
+        System.out.println(roleService.findById("1"));
     }
 
 }
